@@ -1,26 +1,36 @@
 <template>
-    <div class="modal" v-if="modalVisible" @click="hideModal">
-        <div class="modal__content" @click.stop>
-            <slot></slot>
+    <div
+        class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-10"
+        @click="$emit('hideModal')"
+    >
+        <div
+            class="bg-white w-[800px] max-h-[800px] overflow-auto p-5 rounded-lg shadow-lg"
+            @click.stop
+        >
+            <h3 class="text-lg font-bold mb-4">Просмотр</h3>
+            {
+            <div class="space-y-2" v-for="(value, key) in user" :key="key">
+                {{ key }}: {{ value }}
+            </div>
+        }
         </div>
     </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
     name: "project-modal",
     props: {
-        modalVisible: {
-            type: Boolean,
-            default: false,
+        user: {
+            type: Object ,
+            required: true,
         },
     },
-    methods: {
-        hideModal() {
-            this.$emit("update:modalVisible", false);
-        },
-    },
-};
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Добавьте стили, если нужно */
+</style>
