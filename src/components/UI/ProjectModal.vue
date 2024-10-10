@@ -17,7 +17,7 @@
             <h3 class="text-lg font-bold mb-4">Просмотр</h3>
 
             <div class="space-y-2">
-                <template v-if="user">
+                <div v-if="user">
                     <div>{</div>
                     <div v-for="(value, key) in user" :key="key" class="pl-4">
                         "{{ key }}":
@@ -34,8 +34,7 @@
                                         <div class="pl-4">
                                             <div
                                                 v-for="(
-                                                    subValue2,
-                                                    subKey2
+                                                    subValue2, subKey2
                                                 ) in subValue1"
                                                 :key="subKey2"
                                             >
@@ -62,10 +61,10 @@
                         <span v-if="!isLastElement(user, key)">,</span>
                     </div>
                     <div>}</div>
-                </template>
-                <template v-else>
+                </div>
+                <div v-else>
                     <p>Нет данных о пользователе.</p>
-                </template>
+                </div>
             </div>
         </div>
     </div>
