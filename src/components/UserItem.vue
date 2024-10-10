@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-[49%] h-[360px] border rounded-md flex flex-col justify-between items-center p-4 mx-2 my-1"
+        class="w-[49%] h-[365px] border rounded-md flex flex-col justify-between items-center p-4 mx-2 my-1"
     >
         <div
             class="w-[200px] h-[200px] my-5 border rounded-[3px] overflow-hidden"
