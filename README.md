@@ -1,5 +1,41 @@
-# Vue 3 + TypeScript + Vite
+# Приложение "Сайт с пользователями"
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Приложение реализует функционал сайта с пользователями. Получая через API-запрос список пользователей в формате JSON, он преобразует их в объект, и отображает их даныне в карточках.
+В данном случае - их фотографию, имя и адрес электронной почты. Все данные пользователя можно получить через кнопку подробнее.
+На старнице реализована пагинация(постраничный вывод), пользователей можно отсортировать по алфавитному и номерному порядку. Можно найти отдельного пользователя по имени через строку поиска.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Стек:
+Vue 3 Composition API
+Typescript
+TailwindCSS
+Axios(для API-запросов)
+crypto-js(для генерации хэша по email)
+Gravatar API(для генерации аватара пользователя по email)
+
+Интересные решения в проекте:
+1. Пагинация реализована без сторонних UI-библиотек
+2. Весь функционал реализован в отдельных компонентах, и при необходимости масштабирования можно легко переиспользовать уже имеющиеся компоненты
+
+
+Для работы с репозиторием рекомендуется использовать Microsoft VSCode из-за широкой поддержки Typescript "из коробки".
+
+Как запустить приложение (Dev mode)?
+
+Есть два основных варианта:
+
+npm(Стандартный пакетный менеджер NodeJS) 
+
+```sh
+npm i
+npm run dev
+```
+
+yarn(Пакетный менеджер от Facebook, рекомендуется как более быстрый)
+
+```sh
+npm install --global yarn
+yarn
+yarn dev
+```
+
+В обоих случаях сначала устанавливаем зависимости, а затем запускаем dev версию. Можно совмещать оба пакетных менеджера.
