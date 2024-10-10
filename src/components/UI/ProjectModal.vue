@@ -19,12 +19,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { IUser } from "../UserPageOptions.vue";
 
 export default defineComponent({
     name: "project-modal",
     props: {
         user: {
-            type: Object ,
+            type: Object as () => IUser | null ,
             required: true,
         },
     },
