@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent} from "vue";
 
 export default defineComponent({
     name: "project-input",
@@ -19,7 +19,7 @@ export default defineComponent({
     },
     methods: {
         changeModelValue(event: Event) {
-            this.$emit("update:modelValue", event.target?.value);
+            this.$emit("update:modelValue", (event.target as HTMLInputElement).value);
         },
     },
 });

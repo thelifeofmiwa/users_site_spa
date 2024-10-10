@@ -31,7 +31,7 @@ export default defineComponent({
     },
     methods: {
         changeOption(event: Event) {
-            this.$emit("update:modelValue", event.target?.value);
+            this.$emit("update:modelValue", (event.target as HTMLSelectElement).value);
         },
     },
 });
