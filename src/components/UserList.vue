@@ -3,11 +3,11 @@
         class="w-[1900px] flex flex-wrap justify-between mx-auto gap-x-1 gap-y-4 mt-3"
     >
         <div
-            class="w-[945px] h-[400px] border rounded-md flex flex-col justify-between items-center p-2"
+            class="w-[945px] h-[360px] border rounded-md flex flex-col justify-between items-center p-2"
             v-for="user in users"
             :key="user.name"
         >
-            <div class="w-250 h-250 my-5 border rounded-[3px]">
+            <div class="w-200 h-200 my-5 border rounded-[3px]">
                 <img :src="getGravatarUrl(user.email)" :alt="user.username" />
             </div>
             <div>
@@ -89,7 +89,7 @@ export default defineComponent({
         },
         getGravatarUrl(email: string) {
             const emailHash = MD5(email.trim().toLowerCase()).toString();
-            return `https://www.gravatar.com/avatar/${emailHash}?s=250&d=identicon`;
+            return `https://www.gravatar.com/avatar/${emailHash}?s=200&d=identicon`;
         },
         isObject(value: string | object) {
             if (typeof value === "object") {
