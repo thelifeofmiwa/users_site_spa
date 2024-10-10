@@ -72,7 +72,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { IUser } from "../UserPageOptions.vue";
+import { IUser } from "../../hooks/useUsers";
 
 export default defineComponent({
     name: "project-modal",

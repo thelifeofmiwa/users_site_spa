@@ -21,7 +21,7 @@
 import { defineComponent } from "vue";
 import UserItem from "./UserItem.vue";
 import ProjectModal from "./UI/ProjectModal.vue";
-import { IUser } from "./UserPageOptions.vue";
+import { IUser } from "../hooks/useUsers";
 
 export default defineComponent({
     name: "user-list",
