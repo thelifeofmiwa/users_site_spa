@@ -3,15 +3,16 @@
         class="w-[49%] h-[360px] border rounded-md flex flex-col justify-between items-center p-4 mx-2 my-1"
     >
         <div
-            class="w-[150px] h-[150px] my-5 border rounded-[3px] overflow-hidden"
+            class="w-[200px] h-[200px] my-5 border rounded-[3px] overflow-hidden"
         >
             <img
+                v-if="user"
                 :src="getGravatarUrl(user.email)"
-                :alt="user.username"
+                :alt="user.name"
                 class="w-full h-full object-cover"
             />
         </div>
-        <div class="text-center">
+        <div class="text-center" v-if="user">
             <b>{{ user.name }}</b>
             <div>{{ user.email }}</div>
         </div>
@@ -27,13 +28,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { MD5 } from "crypto-js";
+import { IUser } from "./UserPageOptions.vue";
 
 export default defineComponent({
     name: "user-item",
     props: {
         user: {
-            type: Object,
-            required: true,
+            type: Object as () => IUser | null,
         },
     },
     methods: {
